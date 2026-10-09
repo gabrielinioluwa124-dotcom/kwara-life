@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kwara Life</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7f4;color:#183b2b}
+header{background:#075b3b;color:white;padding:24px}
+main{padding:20px;max-width:900px;margin:auto}
+.hero{background:#075b3b;color:white;padding:25px;border-radius:14px}
+input,button{padding:12px;border:0;border-radius:7px;margin:5px 0}
+button{background:#f4c542;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 7px #ddd}
+</style>
+</head>
+<body>
+<header>
+<h1>🌿 KWARA LIFE</h1>
+<p>Your city. Your people. Your marketplace.</p>
+</header>
+<main>
+<section class="hero">
+<h2>Everything Kwara, in one place!</h2>
+<p>Discover homes, cars, food, jobs and services.</p>
+<input id="q" placeholder="Search categories">
+<button onclick="search()">Search</button>
+</section>
+<h2>Explore Categories</h2>
+<div class="grid" id="items">
+<div class="card">🏠 Houses & Rent</div>
+<div class="card">🚗 Cars</div>
+<div class="card">🍲 Food & Groceries</div>
+<div class="card">💼 Jobs</div>
+<div class="card">🛠️ Services</div>
+<div class="card">👕 Fashion</div>
+<div class="card">📱 Phones & Gadgets</div>
+<div class="card">🏢 Land & Property</div>
+</div>
+<h2>Sell on Kwara Life</h2>
+<p>Seller registration and secure payments will be added in the next development stage.</p>
+</main>
+<script>
+function search(){
+let q=document.getElementById('q').value.toLowerCase();
+document.querySelectorAll('#items .card').forEach(c=>{
+c.style.display=c.textContent.toLowerCase().includes(q)?'block':'none';
+});
+}
+</script>
+</body>
+</html>
